@@ -20,19 +20,17 @@ int main(){
     uniform_int_distribution<int> distrib(low, high);
     int num = distrib(gen);
 
+    bool warn = false;
     int count = 1;
     while (count <= atm){
         int guess;
-        cout << "\nGuess a number: ";
+        if (count == atm) warn = true;
+        if(warn) cout << "\nFinal Attempt! Guess a number: ";
+        else cout << "Attempt " << count << "Guess a number: ";
         cin >> guess;
 
-        string warn;
-        if(count == atm){
-            warn = to_string(cin);
-        }
-
         if (guess == num){
-            cout << "\nYou've guessed the number in " << count << " attempts.";
+            cout << "You've guessed the number in " << count << " attempts.";
             break;
         }else if(guess > num){
             cout << "The number is lower." << endl;
