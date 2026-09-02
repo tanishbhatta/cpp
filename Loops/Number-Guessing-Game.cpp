@@ -26,17 +26,21 @@ int main(){
         int guess;
         if (count == atm) warn = true;
         if(warn) cout << "\nFinal Attempt! Guess a number: ";
-        else cout << "Attempt " << count << "Guess a number: ";
+        else cout << "\n(Attempt " << count << ") Guess a number: ";
         cin >> guess;
 
         if (guess == num){
-            cout << "You've guessed the number in " << count << " attempts.";
+            cout << "\nYou've guessed the number in " << count << " attempts.";
             break;
         }else if(guess > num){
             cout << "The number is lower." << endl;
-        }else{
+        }else if(!warn && guess < num){
             cout << "The number is higher." << endl;
-        }
+        };
+        if (warn){
+            cout << "You lose. The number was "<< num;
+            break;
+        };
         count += 1;
     };
 
