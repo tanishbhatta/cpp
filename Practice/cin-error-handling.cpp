@@ -1,28 +1,67 @@
 #include <iostream>
 #include <variant>
+#include <limits>
+
+void ignoreBuff()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
 
 double getNum1()
 {
-    double num1{};
-    std::cout << "Enter the first number: ";
-    std::cin >> num1;
-    return num1;
+    while (true)
+    {
+        double num1{};
+        std::cout << "Enter the first number: ";
+        std::cin >> num1;
+
+        if (std::cin.fail()){
+            std::cin.clear();
+            ignoreBuff();
+            continue;
+        };
+
+        ignoreBuff();
+        return num1;
+    }
 };
 
 double getNum2()
 {
-    double num2{};
-    std::cout << "Enter the second number: ";
-    std::cin >> num2;
-    return num2;
+    while (true)
+    {
+        double num2{};
+        std::cout << "Enter the second number: ";
+        std::cin >> num2;
+
+        if (std::cin.fail()){
+            std::cin.clear();
+            ignoreBuff();
+            continue;
+        };
+
+        ignoreBuff();
+        return num2;
+    }
 };
 
 char getOpr()
 {
-    char opr{};
-    std::cout << "Enter the operator ( + , - , * , /): ";
-    std::cin >> opr;
-    return opr;
+    while (true)
+    {
+        char opr{};
+        std::cout << "Enter the operator ( + , - , * , /): ";
+        std::cin >> opr;
+
+        if (std::cin.fail()){
+            std::cin.clear();
+            ignoreBuff();
+            continue;
+        };
+
+        ignoreBuff();
+        return opr;
+    }
 };
 
 std::variant<bool, double> calc(double num1, char opr, double num2)
