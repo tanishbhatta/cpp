@@ -60,7 +60,7 @@ int main()
     if (std::holds_alternative<bool>(answ)){
         std::cerr << "Can't divide a number by 0." << std::endl;
     }else{
-        double validAns = std::get<double>{answ};
+        double validAns = std::get<double>(answ);
         printResult(num1, opr, num2, validAns);
     }
 }
