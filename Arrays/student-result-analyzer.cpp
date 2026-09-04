@@ -1,23 +1,3 @@
-// IS Student Score Analyzer using a fixed-size array a good project for me right now?
-// It should let the user:
-
-// 1. Enter how many scores they have (`1`–`50`)
-// 2. Store the scores in an array
-// 3. Print all scores
-// 4. Calculate sum and average
-// 5. Find highest and lowest score
-// 6. Count passing scores (for example, `>= 40`)
-// 7. Search for a requested score
-// 8. Optionally sort scores using bubble sort
-
-// Split it into functions such as:
-
-// ```
-// void printScores(int scores[], int size);
-// int findHighest(int scores[], int size);
-// int findLowest(int scores[], int size);
-// double calculateAverage(int scores[], int size);
-// ```
 #include <iostream>
 
 void printScores(double scores[], int size){
