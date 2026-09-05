@@ -15,22 +15,50 @@
 // No char[] for names — std::string only
 // Bad input (letters typed where a number expected) must not crash or infinite-loop — this is the hard part, think about cin.fail()
 #include <iostream>
+#include <limits>
 
-int main(){
-    while (true){
+void ignoreLine()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+int main()
+{
+    while (true)
+    {
         int stdNum;
         std::cout << "How many students? (Between 1-30): ";
         std::cin >> stdNum;
+        if (std::cin.fail()){
+            std::cerr << "Error: input must be a number." << "\n";
+            std::cin.clear();
+            ignoreLine();
+            continue;
+        }
+        std::cout << "The input value we got is " << stdNum << std::endl;
+        ignoreLine();
+
         if (1 > stdNum || stdNum > 30){
-            std::cout << "Invalid: input should be between 1 and 30." << std::endl;
+            std::cerr << "Invalid: input should be between 1 and 30.\n" << std::endl;
         }else break;
     }
-    while (true){
+    while (true)
+    {
         int subNum;
         std::cout << "\nHow many students? (Between 1-10): ";
         std::cin >> subNum;
+
+        if (std::cin.fail()){
+            std::cerr << "Error: input must be a number." << "\n";
+            std::cin.clear();
+            ignoreLine();
+            continue;
+        };
+        std::cout << "The input value we got is " << subNum << std::endl;
+        ignoreLine();
+
         if (1 > subNum || subNum > 10){
-            std::cout << "Invalid: input should be between 1 and 10." << std::endl;
+            std::cout << "Invalid: input should be between 1 and 10.\n" << std::endl;
         }else break;
     }
 };
