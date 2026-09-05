@@ -61,4 +61,6 @@ int main()
             std::cout << "Invalid: input should be between 1 and 10.\n" << std::endl;
         }else break;
     }
+
+    double scores[30][20];
 };
