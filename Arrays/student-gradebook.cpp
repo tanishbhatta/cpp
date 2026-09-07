@@ -28,8 +28,7 @@ void askInput(int student_num, int subject_num, std::string students_name[], dou
     for (int i=0; i<student_num; i++)
     {
         std::string name;
-        while (true)
-        {
+        while (true){
             std::cout << "\nEnter name for student " << i+1 << ": ";
             std::getline(std::cin, name);
 
