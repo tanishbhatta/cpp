@@ -1,20 +1,23 @@
 #include <iostream>
-#include <vector>
+#include <string>
+#include <limits>
 
-std::vector<int> multiply(std::vector<int>& big, int x){
-    int carry = 0;
-    for (int i = 0; i < big.size(); i++) {
-        int val = big[i] * x + carry;
-        big[i] = val % 10;
-        carry = val / 10;
-    }
-    while (carry) {
-        big.push_back(carry % 10);
-        carry /= 10;
-    }
-    return big;
+void ignoreLine(){
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-int main(){
-    std::vector<int> big = {4};
+int main() {
+    int num{};
+    int num2{};
+    std::string opr{};
+
+    std::cout << "Enter the first number: "; std::cin >> num;
+    ignoreLine();
+    std::cout << "Operator: "; std::cin >> opr;
+    ignoreLine();
+    std::cout << "Enter the second number: "; std::cin >> num2;
+    ignoreLine();
+
+    if (opr == "+") std::cout << "Sum is: " << num+num2 << std::endl;
+    return 0;
 }

@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#include <boost/multiprecision/cpp_int.hpp>
-
 int trailZero(long long num)
 {
     long long fac = 1;
@@ -12,8 +10,7 @@ int trailZero(long long num)
 
 int main()
 {
-    boost::multiprecision::cpp_int num{};
-    std::cin >> num;
+    int num;
     std::cout << "Factorial: " <<trailZero(num) << std::endl;
     return 0;
 }
