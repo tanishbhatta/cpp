@@ -5,6 +5,6 @@
 
 int main() {
     std::string check = "test@hello";
-    std::cout << check.find('@');
+    std::cout << check.substr(5, 5);
     return 0;
 }
