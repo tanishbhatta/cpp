@@ -1,16 +1,24 @@
 #include <iostream>
 #include <string>
-#include <cctype>
 
 int main() {
-    std::string wrd{};
-    std::getline(std::cin >> std::ws, wrd);
-    int lenArr[26];
+    std::string s{};
+    std::cin >> s;
+    int arr[26]{}, maxVal{}, cPos{};
 
-    for (int i = 0; i < static_cast<int>(wrd.length()); ++i){
-        int slotNum = wrd[i] - 'a';
-        lenArr[slotNum] += 1;
+    for (char c : s){
+        arr[c - 'a']++;
     }
+
+    for (int i = 0; i<26; ++i){
+        if (arr[i] > maxVal){
+            maxVal = arr[i];
+            cPos = i;
+        }
+    }
+
+    std::cout << static_cast<char>(cPos+'a') << " " << maxVal << std::endl;
+
 
     return 0;
 }
