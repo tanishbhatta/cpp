@@ -6,12 +6,11 @@ int main() {
     int k{};
     std::cin >> s;
     std::cin >> k;
-    int arr[26]{}, aPos { k%26 };
-
+    
     for (char c : s){
-        
+        int cPos = (c - 'a') + k;
+        std::cout << static_cast<char>((cPos % 26) + 'a');
     }
-
 
     return 0;
 }
