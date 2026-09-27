@@ -4,18 +4,22 @@
 int main() {
     std::string s{};
     std::cin >> s;
-    int arr[26]{};
-    int cPos {};
+    int arr[26]{}, cPos {};
+    bool isUnique{};
 
     for (char c : s){
         arr[c - 'a']++;
     }
 
     for (char c : s){
-        if (arr[c - 'a'] == 1) cPos++;
+        cPos++;
+        if (arr[c - 'a'] == 1){ 
+            isUnique = true;
+            break;
+        }
     }
 
-    if (cPos == 0) std::cout << -1 << std::endl;
+    if (!isUnique) std::cout << -1 << std::endl;
     else std::cout << cPos <<std::endl;
 
     return 0;
