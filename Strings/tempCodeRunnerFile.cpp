@@ -1,30 +1,40 @@
 #include <iostream>
 #include <string>
 
-int main() {
-    std::string str{}, pat{};
-    int p{};
-    std::cin >> str;
-    std::cin >> pat;
-    std::cin >> p;
-    bool isPat{ true };
-
-    int strLen { static_cast<int>(str.length()) },
-    patLen { static_cast<int>(pat.length()) };
-
-    if (strLen < patLen) std::cout << "NO" << std::endl;
-
-    for (int i = 0; i <= (strLen - patLen); ++i){
-        for (int j = 0; j < patLen; ++j){
-            if (str[i+j] != pat[j]) isPat = false;
-        }
-        if (i+1 == p && isPat){
-            std::cout << "YES" << std::endl;
-            return 0;
-        }
-        isPat = true;
+int maxInArr(int arr[], int size){
+    int max{};
+    for (int i=0; i<size; ++i){
+        if (arr[i] > max) max = arr[i];
     }
-    std::cout << "NO" << std::endl;
+    return max;
+}
+
+int getCharFromArr(int arr[], int size, int value){
+    int val { value };
+    for (int i = 0; i<size; ++i){
+        if (arr[i] == val) return i + 'a';
+    }
+    return 0;
+}
+
+int main() {
+    std::string s{};
+    std::cin >> s;
+    int alphaArr[26]{};
+
+    for (char c : s){
+        alphaArr[c - 'a']++;
+    }
+
+    int maxIter = maxInArr(alphaArr, 26);
+    int maxNum = maxIter;
+
+    for (int i = 0; i < maxIter; ++i){
+        int charVal = getCharFromArr(alphaArr, 26, maxNum);
+        if (charVal) std::cout << static_cast<char>(charVal) << maxNum;
+        alphaArr[charVal - 'a'] = 0;
+    }
+    
 
     return 0;
 }

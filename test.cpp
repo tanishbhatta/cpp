@@ -1,10 +1,9 @@
 #include <iostream>
-#include <string>
-#include <cctype>
-
 
 int main() {
-    std::string check = "test@hello";
-    std::cout << check.substr(5, 5);
+    int i = 43;
+
+    std::cout << static_cast<char>(i);
+
     return 0;
 }
