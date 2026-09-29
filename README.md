@@ -2,9 +2,7 @@
 
 My C++ learning repository.
 
-I'm still at the beginning of learning C++, so this repo is where I'm keeping the programs I write while practicing the fundamentals and getting comfortable with the language.
-
-Right now, it mainly contains small programs covering things like conditionals and arrays. I'll keep adding to it as I move into more C++ concepts, DSA, competitive programming, and eventually embedded programming. :contentReference[oaicite:1]{index=1}
+Right now, it mainly contains small programs covering things like conditionals and arrays. I'll keep adding to it as I move into more C++ concepts, DSA & competitive programming. :contentReference[oaicite:1]{index=1}
 
 ## Current focus
 
@@ -13,7 +11,6 @@ Right now, it mainly contains small programs covering things like conditionals a
 - Arrays and conditionals
 - Building programming logic
 - DSA and competitive programming
-- Exploring C++ for embedded systems
 
 ## About this repo
 
