@@ -5,9 +5,9 @@ int pattCount(const std::string &s, const std::string &p){
     int lenS { static_cast<int>(s.length()) },
     lenP { static_cast<int>(p.length()) }, 
     count{};
-    bool isPat { true };
 
-    for (int i = 0; i<(lenS-lenP); ++i){
+    for (int i = 0; i<=(lenS-lenP); ++i){
+        bool isPat { true };
         for (int j = 0; j<lenP; ++j){
             if (s[i+j] != s[j]){
                 isPat = false;
@@ -15,7 +15,6 @@ int pattCount(const std::string &s, const std::string &p){
             }
         }
         if (isPat) count++;
-        isPat = true;
     }
 
     return count;

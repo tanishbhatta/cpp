@@ -19,7 +19,10 @@ int main() {
     for (int i = 0; i <= (strLen - patLen); ++i){
         bool isPat {true};
         for (int j = 0; j < patLen; ++j){
-            if (str[i+j] != pat[j]) isPat = false;
+            if (str[i+j] != pat[j]){
+                isPat = false;
+                break;
+            }
         }
         if (i+1 == p && isPat){
             std::cout << "YES" << std::endl;
