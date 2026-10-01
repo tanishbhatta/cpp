@@ -5,7 +5,7 @@ int main() {
     std::string s{},
     vowels = "aeiou";
     std::cin >> s;
-    int pos{};
+    int pos{-1};
 
     for (int i=0; i<(static_cast<int>(s.length())); ++i){
         if (vowels.find(s[i]) != std::string::npos){
