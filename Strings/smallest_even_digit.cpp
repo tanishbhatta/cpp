@@ -1,23 +1,17 @@
 #include <iostream>
 #include <string>
-#include <limits>
 #include <cctype>
 
 int main() {
     std::string s{};
     std::cin >> s;
-    int sm {std::numeric_limits<int>::max()};
+    int sm {10};
 
     for (char c : s){
         int dig = c - '0';
-        if (std::isdigit(c) && dig < sm && dig % 2 == 0) sm = dig;
+        if (std::isdigit(c) && dig %2 == 0 && dig < sm) sm = dig;
     }
-
-    if (sm == std::numeric_limits<int>::max()){
-        std::cout << -1 << std::endl;
-        return 0;
-    }
-
-    std::cout << sm << std::endl;
+    if (sm == 10) std::cout << -1 << std::endl; 
+    else std::cout << sm << std::endl;
     return 0;
 }
