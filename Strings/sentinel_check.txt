@@ -1,0 +1,9 @@
+We can give 'sm' the minimum most value possible that is positive infinity.
+After the loop, if the sm is still positive infinity we get to know there was no value.
+The input that breaks 0 as the starting value is a0e4f8.
+
+---
+
+For the smallest even digit, sm starts at - 2^15 -1
+For the largest odd digit, sm starts at -2^15 -1
+The rule for starting value is, if we want to find the largest value, we need -2^15 -1, and for the smallest value, we need 2^15 -1.
