@@ -1,26 +1,19 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 int main() {
     std::string s{};
     std::cin >> s;
-    bool foundDig {};
-    int sm {};
+    int sm {10};
 
     for (char c : s){
-        if (!foundDig && std::isdigit(c)){
-            sm = c;
-            foundDig = true;
-        }
-        if (foundDig && std::isdigit(c) && c - '0' < sm) sm = c - '0';
+        int dig = c - '0';
+        if (std::isdigit(c) && dig < sm) sm = dig;
     }
 
-    if (!foundDig){
-        std::cout << -1 << std::endl;
-        return 0;
-    }
-
-    std::cout << sm << std::endl;
+    if (sm == 10) std::cout << -1 << std::endl;
+    else std::cout << sm << std::endl;
 
     return 0;
 }
