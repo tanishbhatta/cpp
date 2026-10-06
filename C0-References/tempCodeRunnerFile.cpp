@@ -1,20 +1,8 @@
 #include <iostream>
 #include <vector>
 
-void reverseArr(std::vector<int>& vec){
-    int left = 0;
-    int right = static_cast<int>(vec.size()) - 1;
-    while (left < right){
-        int st = vec[left];
-        vec[left] = vec[right];
-        vec[right] = st;
-        left++;
-        right--;
-    }
-}
-
-void printArr(const std::vector<int>& vec){
-    for (int i = 0; i < static_cast<int>(vec.size()); ++i){
+void printArr(std::vector<int> vec){
+    for (int i = 0; i < (static_cast<int>(vec.size())); ++i){
         std::cout << vec[i] << " ";
     }
 }
@@ -24,12 +12,21 @@ int main() {
     std::cin >> n;
     std::vector<int> arr(n);
 
-    for (int i=0; i<n; ++i){
-        int val{};
-        std::cin >> val;
-        arr[i] = val;
+    for (int i = 0; i<n; ++i){
+        int cur { arr[i] };
+        std::cin >> cur;
+        arr[i] = cur;
     }
-    reverseArr(arr);
+
+    for (int x = 0; x<(n/2); ++x){
+        if (arr[x] > arr[n-1-x]){
+            int xVal = arr[x];
+            arr[x] = arr[n-1-x];
+            arr[n-1-x] = xVal;
+        }
+    }
+
     printArr(arr);
+    
     return 0;
 }
